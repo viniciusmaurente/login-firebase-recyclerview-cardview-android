@@ -55,7 +55,6 @@ public class EditarPerfilActivity extends AppCompatActivity {
         storageRef              = ConfiguracaoFirebase.getFirebaseStorage();
         identificadorUsuario    = UsuarioFirebase.getIdentificadorUsuario();
 
-
         //inicializar componentes
         inicializarComponentes();
 
@@ -74,7 +73,6 @@ public class EditarPerfilActivity extends AppCompatActivity {
             imagePerfil.setImageResource(R.drawable.background_degrade);
         }
 
-
         //Salvar alterações do nome
         buttonSalvar.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -88,7 +86,6 @@ public class EditarPerfilActivity extends AppCompatActivity {
                 usuarioLogado.setCpf(cpfAtualizado);
                 usuarioLogado.setNome(nomeAtualizado);
                 usuarioLogado.atualizar();
-
 
                 finish();
 
@@ -106,20 +103,16 @@ public class EditarPerfilActivity extends AppCompatActivity {
                 if (i.resolveActivity(getPackageManager()) != null){
                     startActivityForResult(i, SELECAO_GALERIA);
                 }
-
             }
         });
-
     }
 
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-
         if (resultCode == RESULT_OK){
             Bitmap imagem = null;
-
             try {
                 //seleção na galeria
                 switch (requestCode){
@@ -140,14 +133,12 @@ public class EditarPerfilActivity extends AppCompatActivity {
                     imagem.compress(Bitmap.CompressFormat.JPEG, 72, baos);
                     byte[] dadosImagem = baos.toByteArray();
 
-
                     //salvar imagem no firebase
                     final StorageReference imagemRef = storageRef
                             .child("imagens")
                             .child("perfil")
                             .child(identificadorUsuario + ".jpeg");
                     UploadTask uploadTask = imagemRef.putBytes(dadosImagem);
-
                     uploadTask.addOnFailureListener(new OnFailureListener() {
                         @Override
                         public void onFailure(@NonNull Exception e) {
@@ -165,13 +156,11 @@ public class EditarPerfilActivity extends AppCompatActivity {
                                 public void onComplete(@NonNull Task<Uri> task) {
                                     Uri url = task.getResult();
                                     atualizarFotousuario(url);
-
                                 }
                             });
                         }
                     });
                 }
-
             } catch (Exception e ){
                 e.printStackTrace();
             }
@@ -189,8 +178,6 @@ public class EditarPerfilActivity extends AppCompatActivity {
         Toast.makeText(EditarPerfilActivity.this,
                 "Sua foto foi atualizada!",
                 Toast.LENGTH_SHORT).show();
-
-
     }
 
     private void atualizarCpfUsuario(String string){
@@ -200,7 +187,6 @@ public class EditarPerfilActivity extends AppCompatActivity {
         //atualizar cpf no firebase
         usuarioLogado.setCpf(textInputCpf.toString());
         usuarioLogado.atualizar();
-
     }
 
     public void inicializarComponentes(){
@@ -211,8 +197,5 @@ public class EditarPerfilActivity extends AppCompatActivity {
         textEmailPerfil     = findViewById(R.id.textEmailPerfil);
         buttonSalvar        = findViewById(R.id.buttonSalvar);
         textInputCpf        = findViewById(R.id.textInputCpf);
-
-
     }
-
 }

@@ -50,17 +50,14 @@ public class CadastroActivity extends AppCompatActivity {
                 String textoEmail = campoEmail.getText().toString();
                 String textosenha = campoSenha.getText().toString();
 
-
                 if( !textoNome.isEmpty() ){
                     if( !textoEmail.isEmpty() ){
                         if( !textosenha.isEmpty() ){
-
                             usuario = new Usuario();
                             usuario.setNome( textoNome );
                             usuario.setEmail( textoEmail );
                             usuario.setSenha( textosenha );
                             cadastrar( usuario );
-
                         }else{
                             Toast.makeText(CadastroActivity.this,
                                     "Preencha a senha!",
@@ -76,12 +73,8 @@ public class CadastroActivity extends AppCompatActivity {
                             "Preencha o nome!",
                             Toast.LENGTH_SHORT).show();
                 }
-
-
             }
         });
-
-
     }
 
     /**
@@ -100,11 +93,8 @@ public class CadastroActivity extends AppCompatActivity {
                 new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
-
                         if( task.isSuccessful() ){
-
                             try {
-
                                 progressBar.setVisibility(View.GONE);
 
                                 //Salvar dados no firebase
@@ -114,7 +104,6 @@ public class CadastroActivity extends AppCompatActivity {
 
                                 //Salvar dados no profile do Firebase
                                 UsuarioFirebase.atualizarNomeUsuario( usuario.getNome() );
-
                                 Toast.makeText(CadastroActivity.this,
                                         "Cadastro com sucesso",
                                         Toast.LENGTH_SHORT).show();
@@ -125,13 +114,8 @@ public class CadastroActivity extends AppCompatActivity {
                             }catch (Exception e){
                                 e.printStackTrace();
                             }
-
-
-
                         }else {
-
                             progressBar.setVisibility( View.GONE );
-
                             String erroExcecao = "";
                             try{
                                 throw task.getException();
@@ -145,18 +129,13 @@ public class CadastroActivity extends AppCompatActivity {
                                 erroExcecao = "ao cadastrar usuário: "  + e.getMessage();
                                 e.printStackTrace();
                             }
-
                             Toast.makeText(CadastroActivity.this,
                                     "Erro: " + erroExcecao ,
                                     Toast.LENGTH_SHORT).show();
-
-
                         }
-
                     }
                 }
         );
-
     }
 
     public void inicializarComponentes() {

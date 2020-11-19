@@ -65,7 +65,6 @@ public class AddEventoActivity extends AppCompatActivity {
                 intent.setType("image/*");
                 intent.setAction(Intent.ACTION_GET_CONTENT);
                 startActivityForResult(intent, REQUEST_CODE_IMAGE);
-
             }
         });
 
@@ -78,8 +77,6 @@ public class AddEventoActivity extends AppCompatActivity {
                 }
             }
         });
-
-
     }
 
 
@@ -106,16 +103,13 @@ public class AddEventoActivity extends AppCompatActivity {
                             @Override
                             public void onSuccess(Void aVoid) {
                                 startActivity(new Intent(getApplicationContext(), HomeActivity.class));
-                                // Toast.makeText(MainActivity.this, "Download realizado com sucesso!", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(AddEventoActivity.this, "Evento adicionado com sucesso!", Toast.LENGTH_SHORT).show();
                             }
                         });
-
                     }
                 });
-
             }
         });
-
     }
 
     @Override
@@ -126,8 +120,6 @@ public class AddEventoActivity extends AppCompatActivity {
             imageUri        =   data.getData();
             isImageAdded    =   true;
             imageViewAdd.setImageURI(imageUri);
-
         }
-
     }
 }

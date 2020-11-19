@@ -13,7 +13,7 @@
         android:layout_width="match_parent"
         android:layout_height="248dp"
         android:orientation="vertical"
-        android:background="#121111">
+        android:background="@color/color_bg_blue">
 
         <ImageView
             android:layout_width="match_parent"

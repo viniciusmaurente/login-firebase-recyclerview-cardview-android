@@ -57,12 +57,10 @@ public class HomeActivity extends AppCompatActivity {
             public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
 
             }
-
             @Override
             public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
 
             }
-
             @Override
             public void afterTextChanged(Editable editable) {
                 if (editable.toString() != null){
@@ -70,11 +68,8 @@ public class HomeActivity extends AppCompatActivity {
                 } else {
                     LoadData("");
                 }
-
             }
         });
-
-
     }
 
     private void LoadData(String data) {
@@ -95,7 +90,6 @@ public class HomeActivity extends AppCompatActivity {
                         startActivity(intent);
                     }
                 });
-
             }
 
             @NonNull
@@ -108,6 +102,9 @@ public class HomeActivity extends AppCompatActivity {
         };
         adapter.startListening();
         recyclerView.setAdapter(adapter);
-
     }
 }
+
+
+
+

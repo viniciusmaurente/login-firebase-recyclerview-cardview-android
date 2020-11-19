@@ -21,7 +21,7 @@ public class ViewActivity extends AppCompatActivity {
 
     ImageView imageView;
     TextView textView;
-    Button btnDelete;
+
 
     DatabaseReference ref;
     @Override
@@ -31,12 +31,12 @@ public class ViewActivity extends AppCompatActivity {
 
         imageView   =   findViewById(R.id.image_single_view_Activity);
         textView    =   findViewById(R.id.textView_single_title_Activity);
-        btnDelete   =   findViewById(R.id.btnDelete);
-        ref         =   FirebaseDatabase.getInstance().getReference().child("Event");
 
-        String EventKey = getIntent().getStringExtra("Eventkey");
+        ref         =   FirebaseDatabase.getInstance().getReference().child("Evento");
 
-        ref.child("").addValueEventListener(new ValueEventListener() {
+        String EventKey = getIntent().getStringExtra("EventKey");
+
+        ref.child("EventKey").addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 if (snapshot.exists()){
@@ -45,9 +45,7 @@ public class ViewActivity extends AppCompatActivity {
 
                     Picasso.get().load(ImageUrl).into(imageView);
                     textView.setText(eventName);
-
                 }
-
             }
 
             @Override
@@ -55,6 +53,5 @@ public class ViewActivity extends AppCompatActivity {
 
             }
         });
-
     }
 }
