@@ -2,9 +2,10 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
-
-    <item android:id="@+id/menu_sair"
+    <item
+        android:iconTint="@color/white"
+        android:id="@+id/menu_sair"
         android:title="Sair"
-        app:showAsAction="never"/>
+        app:showAsAction="ifRoom" />
 
 </menu>
