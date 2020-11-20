@@ -4,10 +4,12 @@ public class Event {
 
     private String EventName;
     private String ImageUrl;
+    private String EventDesc;
 
-    public Event(String eventName, String imageUrl) {
-        EventName = eventName;
-        ImageUrl = imageUrl;
+    public Event(String eventName, String imageUrl, String eventDesc) {
+        EventName   = eventName;
+        ImageUrl    = imageUrl;
+        EventDesc   = eventDesc;
     }
 
     public Event() {
@@ -28,4 +30,13 @@ public class Event {
     public void setImageUrl(String imageUrl) {
         ImageUrl = imageUrl;
     }
+
+    public String getEventDesc() {
+        return EventDesc;
+    }
+
+    public void setEventDesc(String eventDesc) {
+        EventDesc = eventDesc;
+    }
+
 }

@@ -42,7 +42,7 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/evento_desc"
+            android:id="@+id/event_desc"
             android:text="Evento Descricao"
             android:textColor="@color/white"
             android:layout_marginLeft="12dp"

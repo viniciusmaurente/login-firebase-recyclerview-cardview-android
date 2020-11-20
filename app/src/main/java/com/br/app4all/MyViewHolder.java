@@ -10,6 +10,7 @@ public class MyViewHolder extends RecyclerView.ViewHolder {
 
     ImageView imageView;
     TextView textView;
+    TextView textViewDesc;
     View v;
 
     public MyViewHolder(@NonNull View itemView) {
@@ -17,6 +18,7 @@ public class MyViewHolder extends RecyclerView.ViewHolder {
 
         imageView   = itemView.findViewById(R.id.image_single_view);
         textView    = itemView.findViewById(R.id.textView_single_title);
+        textViewDesc= itemView.findViewById(R.id.event_desc);
         v = itemView;
     }
 }

@@ -81,6 +81,7 @@ public class HomeActivity extends AppCompatActivity {
             @Override
             protected void onBindViewHolder(@NonNull MyViewHolder holder, int position, @NonNull Event model) {
                 holder.textView.setText(model.getEventName());
+                holder.textViewDesc.setText(model.getEventDesc());
                 Picasso.get().load(model.getImageUrl()).into(holder.imageView);
                 holder.v.setOnClickListener(new View.OnClickListener() {
                     @Override
