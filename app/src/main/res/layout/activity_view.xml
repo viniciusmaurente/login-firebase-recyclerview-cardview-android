@@ -18,7 +18,7 @@
         <ImageView
             android:id="@+id/image_single_view_Activity"
             android:layout_width="match_parent"
-            android:layout_height="180dp"
+            android:layout_height="250dp"
             android:background="@color/text_ligth_blue"
             android:scaleType="centerCrop" />
 

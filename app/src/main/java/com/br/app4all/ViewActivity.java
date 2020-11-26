@@ -48,12 +48,6 @@ public class ViewActivity extends AppCompatActivity {
         textView       =   findViewById(R.id.textView_single_title_Activity);
         textViewDesc   =   findViewById(R.id.desc_evento);
 
-        //Recuperar dados do usuário
-        FirebaseUser usuarioPerfil = UsuarioFirebase.getUsuarioAtual();
-        textView.setText( usuarioPerfil.getDisplayName() );
-        textViewDesc.setText( usuarioPerfil.getEmail() );
-        imageView.setImageURI(usuarioPerfil.getPhotoUrl());
-
         String EventKey = getIntent().getStringExtra("EventKey");
 
         ref.child(EventKey).addValueEventListener(new ValueEventListener() {
