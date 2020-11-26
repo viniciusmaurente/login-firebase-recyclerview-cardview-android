@@ -11,11 +11,8 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 
-import com.br.app4all.AddEventoActivity;
-import com.br.app4all.EditarPerfilActivity;
-import com.br.app4all.HomeActivity;
+import com.br.app4all.activity.HomeActivity;
 import com.br.app4all.R;
-import com.br.app4all.EditarPerfilActivity;
 
 
 public class EventosFragment extends Fragment {

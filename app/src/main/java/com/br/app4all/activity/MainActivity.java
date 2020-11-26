@@ -1,4 +1,4 @@
-package com.br.app4all;
+package com.br.app4all.activity;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -7,7 +7,6 @@ import androidx.appcompat.widget.Toolbar;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentPagerAdapter;
-import androidx.fragment.app.ListFragment;
 import androidx.viewpager.widget.ViewPager;
 
 import android.content.Intent;

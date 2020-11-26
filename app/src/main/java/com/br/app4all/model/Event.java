@@ -1,4 +1,4 @@
-package com.br.app4all;
+package com.br.app4all.model;
 
 public class Event {
 

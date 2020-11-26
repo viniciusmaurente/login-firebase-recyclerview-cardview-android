@@ -1,4 +1,4 @@
-package com.br.app4all;
+package com.br.app4all.activity;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;

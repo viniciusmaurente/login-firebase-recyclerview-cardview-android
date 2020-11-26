@@ -14,11 +14,10 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 
-import com.br.app4all.AddEventoActivity;
+import com.br.app4all.activity.AddEventoActivity;
 import com.br.app4all.R;
 
-import com.br.app4all.EditarPerfilActivity;
-import com.br.app4all.fragment.EventosFragment;
+import com.br.app4all.activity.EditarPerfilActivity;
 import com.br.app4all.model.Usuario;
 import com.br.app4all.util.UsuarioFirebase;
 import com.bumptech.glide.Glide;

@@ -1,10 +1,12 @@
-package com.br.app4all;
+package com.br.app4all.activity;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.br.app4all.R;
 
 public class MyViewHolder extends RecyclerView.ViewHolder {
 
