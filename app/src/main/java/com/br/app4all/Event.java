@@ -5,11 +5,13 @@ public class Event {
     private String EventName;
     private String ImageUrl;
     private String EventDesc;
+    private String DataEvent;
 
-    public Event(String eventName, String imageUrl, String eventDesc) {
+    public Event(String eventName, String imageUrl, String eventDesc, String dataEvent) {
         EventName   = eventName;
         ImageUrl    = imageUrl;
         EventDesc   = eventDesc;
+        DataEvent   = dataEvent;
     }
 
     public Event() {
@@ -37,6 +39,14 @@ public class Event {
 
     public void setEventDesc(String eventDesc) {
         EventDesc = eventDesc;
+    }
+
+    public String getDataEvent() {
+        return DataEvent;
+    }
+
+    public void setDataEvent(String dataEvent) {
+        DataEvent = dataEvent;
     }
 
 }

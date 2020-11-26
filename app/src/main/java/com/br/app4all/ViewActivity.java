@@ -34,6 +34,8 @@ public class ViewActivity extends AppCompatActivity {
     ImageView imageView;
     TextView textView;
     TextView textViewDesc;
+    TextView dataEvent;
+
     private Usuario usuarioLogado;
     DatabaseReference ref;
 
@@ -47,6 +49,7 @@ public class ViewActivity extends AppCompatActivity {
         imageView      =   findViewById(R.id.image_single_view_Activity);
         textView       =   findViewById(R.id.textView_single_title_Activity);
         textViewDesc   =   findViewById(R.id.desc_evento);
+        dataEvent      =   findViewById(R.id.desc_data_evento);
 
         String EventKey = getIntent().getStringExtra("EventKey");
 
@@ -54,13 +57,17 @@ public class ViewActivity extends AppCompatActivity {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 if (snapshot.exists()){
+                    String DataEvent = snapshot.child("DataEvent").getValue().toString();
                     String EventName = snapshot.child("EventName").getValue().toString();
                     String EventDesc = snapshot.child("EventDesc").getValue().toString();
                     String ImageUrl = snapshot.child("ImageUrl").getValue().toString();
 
+
                     Picasso.get().load(ImageUrl).into(imageView);
+                    dataEvent.setText(DataEvent);
                     textView.setText(EventName);
                     textViewDesc.setText(EventDesc);
+
                 }
             }
 
