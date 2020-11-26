@@ -27,7 +27,6 @@ import com.google.firebase.auth.FirebaseUser;
 
 public class PerfilFragment extends Fragment {
 
-
     private Button buttonEditarPerfil;
     private Button btnInserirEvento;
     private ImageView imagePerfil;
@@ -36,11 +35,9 @@ public class PerfilFragment extends Fragment {
     private TextView textEmailPerfil;
     private TextView textInputCpf;
 
-
     public PerfilFragment() {
         // Required empty public constructor
     }
-
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -57,7 +54,6 @@ public class PerfilFragment extends Fragment {
         FirebaseUser usuarioPerfil = UsuarioFirebase.getUsuarioAtual();
         textNomePerfil.setText( usuarioPerfil.getDisplayName() );
         textEmailPerfil.setText( usuarioPerfil.getEmail() );
-
 
         String caminhoFoto = usuarioLogado.getCaminhoFoto();
         if (caminhoFoto != null){
@@ -95,7 +91,6 @@ public class PerfilFragment extends Fragment {
         //atualizar foto no firebase
         usuarioLogado.setCaminhoFoto(url.toString());
         usuarioLogado.atualizar();
-
     }
 
     public void inicializarComponentes(View view){
@@ -107,5 +102,4 @@ public class PerfilFragment extends Fragment {
         textInputCpf        = view.findViewById(R.id.textInputCpf);
 
     }
-
 }
